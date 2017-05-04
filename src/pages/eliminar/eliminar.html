@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Eliminar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="inventario">
+    <img src="http://localhost:8000/images/{{inventario.foto}}" alt="foto">
+    <ion-card-content>
+      <ion-card-title>
+        {{ inventario.producto }}
+      </ion-card-title>
+      <p>Precio: {{inventario.precio }}</p>
+      <p>Existencia: {{inventario.existencia }}</p>
+      <p>Proveedor: {{inventario.proveedor }}</p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button icon-only color="danger" (click)="onEliminar()">
+          <ion-icon name="trash"></ion-icon>
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button (click)="onCancelar()">
+          <ion-icon name="arrow-back"></ion-icon>
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

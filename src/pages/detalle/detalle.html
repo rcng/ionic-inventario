@@ -1,0 +1,35 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Detalle
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+
+  <ion-card>
+    <img src="http://localhost:8000/images/{{inventario?.foto}}" alt="foto">
+    <ion-card-content>
+      <ion-card-title>
+        {{ inventario?.producto }}
+      </ion-card-title>
+      <p>Precio: {{inventario?.precio }}</p>
+      <p>Existencia: {{inventario?.existencia }}</p>
+      <p>Proveedor: {{inventario?.proveedor }}</p>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button clear small color="primary" (click)="onEditar()">
+          Editar
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button clear small color="danger" (click)="onEliminar()" icon-left>
+          <ion-icon name="trash"></ion-icon>
+          Eliminar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>

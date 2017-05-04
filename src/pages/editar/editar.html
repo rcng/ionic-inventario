@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Editar
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-card *ngIf="inventario">
+    <img src="http://localhost:8000/images/{{inventario.foto}}" alt="foto">
+    <ion-card-content>
+      <ion-list>
+        <ion-item>
+          <ion-label color="primary" floating>Producto</ion-label>
+          <ion-input [(ngModel)]="inventario.producto"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Precio</ion-label>
+          <ion-input type="number" [(ngModel)]="inventario.precio"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Existencia</ion-label>
+          <ion-input type="number" [(ngModel)]="inventario.existencia"></ion-input>
+        </ion-item>
+        <ion-item>
+          <ion-label color="primary" floating>Proveedor</ion-label>
+          <ion-input [(ngModel)]="inventario.proveedor"></ion-input>
+        </ion-item>
+      </ion-list>
+    </ion-card-content>
+    <ion-row no-padding>
+      <ion-col>
+        <button ion-button (click)="onGuardar()">
+          Guardar
+        </button>
+      </ion-col>
+      <ion-col text-right>
+        <button ion-button color="danger" (click)="onCancelar()" icon-left>
+          <ion-icon name="trash"></ion-icon>
+          Cancelar
+        </button>
+      </ion-col>
+    </ion-row>
+  </ion-card>
+</ion-content>
